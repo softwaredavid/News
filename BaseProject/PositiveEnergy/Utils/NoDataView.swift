@@ -30,6 +30,7 @@ class NoDataView: UIView {
         let imgview = UIFactory.createImageView(frame: frame, image: img)
         imgview?.sizeToFit()
         imgview?.center = center
+        imgview?.center.y = imgview!.center.y - 100
         addSubview(imgview!)
         
         let titleFrame = CGRect(x: 0, y: 0, width: 200, height: 20)

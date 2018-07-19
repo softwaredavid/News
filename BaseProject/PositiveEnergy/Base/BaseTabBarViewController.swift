@@ -9,10 +9,10 @@
 import UIKit
 
 struct TabBarPara {
-    var title: String!
-    var image: String!
-    var selectImage: String!
-    var vcName: String!
+    var title: String
+    var image: String
+    var selectImage: String
+    var vcName: String
 }
 class BaseTabBarViewController: UITabBarController,UITabBarControllerDelegate {
 
@@ -29,10 +29,30 @@ class BaseTabBarViewController: UITabBarController,UITabBarControllerDelegate {
         view.addGestureRecognizer(panGesture)*/
         
         selectedIndex = 0
+        view.tintColor = UIColor(red: 186/255, green: 30/255, blue: 39/255, alpha: 1)
         addController()
     }
     private func addController() {
         
+        addChildViewController(para: TabBarPara(title: "宣传",
+                                                image: "home",
+                                                selectImage: "home_select",
+                                                vcName: "Propaganda"))
+        
+        addChildViewController(para: TabBarPara(title: "教育",
+                                                image: "edu",
+                                                selectImage: "edu_select",
+                                                vcName: "Education"))
+        
+        addChildViewController(para: TabBarPara(title: "管理",
+                                                image: "man",
+                                                selectImage: "man_select",
+                                                vcName: "Manager"))
+        
+        addChildViewController(para: TabBarPara(title: "服务",
+                                                image: "ser",
+                                                selectImage: "ser_select",
+                                                vcName: "Service"))
     }
     private func addChildViewController(para: TabBarPara) {
         

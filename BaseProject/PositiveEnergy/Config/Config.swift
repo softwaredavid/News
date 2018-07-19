@@ -25,8 +25,8 @@ struct Config {
     }
     
     enum Color: String {
-        case main = "#666666"
-        case title = "#888888"
+        case main = "#891D22"
+        case title = "#FFFFFF"
         case subTitle
         case bgColor
     }

@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func configWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let vc = ViewController()
+        let vc = BaseTabBarViewController()
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
     }

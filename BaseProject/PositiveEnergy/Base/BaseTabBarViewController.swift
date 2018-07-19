@@ -62,7 +62,7 @@ class BaseTabBarViewController: UITabBarController,UITabBarControllerDelegate {
         
         v.tabBarItem.image = UIImage(named: para.image)
         v.tabBarItem.selectedImage = UIImage(named: para.selectImage)
-        v.tabBarItem.title = para.title
+        v.title = para.title
         let nav = BaseNavigationViewController(rootViewController: v)
         addChildViewController(nav)
     }

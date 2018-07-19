@@ -12,7 +12,7 @@ class PropagandaViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
 
 }

@@ -48,6 +48,14 @@
 		A36DEB3C20E6050A0021439F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36DEB3B20E6050A0021439F /* Message.swift */; };
 		A3B4448420F9E03A008B67FC /* ToModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B4448320F9E03A008B67FC /* ToModelExtension.swift */; };
 		A3F269C320E70E5D00F84930 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F269C220E70E5D00F84930 /* TestModel.swift */; };
+		A3F4EF382100800E00E312AF /* Propaganda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3F4EF372100800E00E312AF /* Propaganda.storyboard */; };
+		A3F4EF3A2100804700E312AF /* Education.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3F4EF392100804700E312AF /* Education.storyboard */; };
+		A3F4EF3C2100805100E312AF /* Manager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3F4EF3B2100805100E312AF /* Manager.storyboard */; };
+		A3F4EF3E2100805C00E312AF /* Service.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3F4EF3D2100805C00E312AF /* Service.storyboard */; };
+		A3F4EF402100807700E312AF /* PropagandaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F4EF3F2100807700E312AF /* PropagandaViewController.swift */; };
+		A3F4EF422100808300E312AF /* EducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F4EF412100808300E312AF /* EducationViewController.swift */; };
+		A3F4EF442100808E00E312AF /* ManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F4EF432100808E00E312AF /* ManagerViewController.swift */; };
+		A3F4EF462100809800E312AF /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F4EF452100809800E312AF /* ServiceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +127,14 @@
 		A36DEB3B20E6050A0021439F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A3B4448320F9E03A008B67FC /* ToModelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToModelExtension.swift; sourceTree = "<group>"; };
 		A3F269C220E70E5D00F84930 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		A3F4EF372100800E00E312AF /* Propaganda.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Propaganda.storyboard; sourceTree = "<group>"; };
+		A3F4EF392100804700E312AF /* Education.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Education.storyboard; sourceTree = "<group>"; };
+		A3F4EF3B2100805100E312AF /* Manager.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Manager.storyboard; sourceTree = "<group>"; };
+		A3F4EF3D2100805C00E312AF /* Service.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Service.storyboard; sourceTree = "<group>"; };
+		A3F4EF3F2100807700E312AF /* PropagandaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropagandaViewController.swift; sourceTree = "<group>"; };
+		A3F4EF412100808300E312AF /* EducationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationViewController.swift; sourceTree = "<group>"; };
+		A3F4EF432100808E00E312AF /* ManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerViewController.swift; sourceTree = "<group>"; };
+		A3F4EF452100809800E312AF /* ServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
 		B113D09AA61043A515C31A2B /* Pods-BaseProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseProjectTests/Pods-BaseProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		B675ACCFD50D5D6E7998484D /* Pods_BaseProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -186,6 +202,10 @@
 		A36DEAD420E5BD3B0021439F /* PositiveEnergy */ = {
 			isa = PBXGroup;
 			children = (
+				A3F4EF3621007F8F00E312AF /* Storyboard */,
+				A3F4EF3521007F8D00E312AF /* views */,
+				A3F4EF3421007F8B00E312AF /* Models */,
+				A3F4EF3321007F8800E312AF /* Controllers */,
 				A3F269C120E70E3400F84930 /* Example */,
 				A36DEB3020E5E3E70021439F /* WebView */,
 				A36DEB2520E5E2DB0021439F /* Base */,
@@ -299,6 +319,42 @@
 				A34E7C6320FC795E007FD4AB /* TestViewController.swift */,
 			);
 			path = Example;
+			sourceTree = "<group>";
+		};
+		A3F4EF3321007F8800E312AF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A3F4EF3F2100807700E312AF /* PropagandaViewController.swift */,
+				A3F4EF412100808300E312AF /* EducationViewController.swift */,
+				A3F4EF432100808E00E312AF /* ManagerViewController.swift */,
+				A3F4EF452100809800E312AF /* ServiceViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A3F4EF3421007F8B00E312AF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A3F4EF3521007F8D00E312AF /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		A3F4EF3621007F8F00E312AF /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				A3F4EF372100800E00E312AF /* Propaganda.storyboard */,
+				A3F4EF392100804700E312AF /* Education.storyboard */,
+				A3F4EF3B2100805100E312AF /* Manager.storyboard */,
+				A3F4EF3D2100805C00E312AF /* Service.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		FF947A26C65FBB51664768A4 /* Pods */ = {
@@ -423,8 +479,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A36DEAE020E5BD3C0021439F /* LaunchScreen.storyboard in Resources */,
+				A3F4EF382100800E00E312AF /* Propaganda.storyboard in Resources */,
+				A3F4EF3C2100805100E312AF /* Manager.storyboard in Resources */,
 				A36DEADD20E5BD3C0021439F /* Assets.xcassets in Resources */,
 				A36DEADB20E5BD3B0021439F /* Main.storyboard in Resources */,
+				A3F4EF3A2100804700E312AF /* Education.storyboard in Resources */,
+				A3F4EF3E2100805C00E312AF /* Service.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,18 +602,22 @@
 				A34E7C6220FC34D7007FD4AB /* FileManager.swift in Sources */,
 				A36DEB2220E5E2C40021439F /* UIView+Extension.swift in Sources */,
 				A36DEB2020E5E2BE0021439F /* Thread+Extension.swift in Sources */,
+				A3F4EF462100809800E312AF /* ServiceViewController.swift in Sources */,
 				A36DEB1320E5E0150021439F /* UserDefault+Extension.swift in Sources */,
 				A36DEB3820E5E51E0021439F /* SDTextView.swift in Sources */,
+				A3F4EF442100808E00E312AF /* ManagerViewController.swift in Sources */,
 				A36DEB1E20E5E2B80021439F /* Dictionary+Extension.swift in Sources */,
 				A34E7C6420FC795E007FD4AB /* TestViewController.swift in Sources */,
 				A32343CE20E6222400D35618 /* SystemAlertView.swift in Sources */,
 				A36DEB3220E5E3F00021439F /* WebViewController.swift in Sources */,
 				A36DEB2B20E5E3110021439F /* BaseTabBarViewController.swift in Sources */,
+				A3F4EF402100807700E312AF /* PropagandaViewController.swift in Sources */,
 				A36DEB1C20E5E29E0021439F /* UILable+Extension.swift in Sources */,
 				A36DEB1520E5E0C30021439F /* UIColor+Extension.swift in Sources */,
 				A36DEB3620E5E4DA0021439F /* NoDataView.swift in Sources */,
 				A36DEAD820E5BD3B0021439F /* ViewController.swift in Sources */,
 				A36DEB0720E5C0F00021439F /* Config.swift in Sources */,
+				A3F4EF422100808300E312AF /* EducationViewController.swift in Sources */,
 				A36DEB2920E5E3030021439F /* UIImageView+Extension.swift in Sources */,
 				A32343CC20E60D8500D35618 /* AppUtils.swift in Sources */,
 				A36DEB3420E5E4CF0021439F /* UIFactory.swift in Sources */,

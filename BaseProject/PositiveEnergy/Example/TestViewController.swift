@@ -24,7 +24,6 @@ class TestViewController: BaseViewController {
         }
         dispatchMain()
         
-       
     }
 
     override func didReceiveMemoryWarning() {

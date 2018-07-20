@@ -1,0 +1,6 @@
+framework module Pods_PositiveEnergyUITests {
+  umbrella header "Pods-PositiveEnergyUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -43,11 +43,16 @@ class HomeScrollerCell: UITableViewCell,SDCycleScrollViewDelegate {
 }
 
 class HomeMiddleCell: UITableViewCell {
+    
     @IBOutlet weak var middleView: UIView!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+    }
+    
+    private func createUI() {
         
     }
 }

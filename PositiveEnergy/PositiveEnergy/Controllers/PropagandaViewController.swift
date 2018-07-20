@@ -25,7 +25,6 @@ class PropagandaViewController: BaseViewController {
         contentScrollerView.bounces = false
         contentScrollerView.showsHorizontalScrollIndicator = false
         contentScrollerView.scrollsToTop = false
-        contentScrollerView.backgroundColor = UIColor.red
         contentScrollerView.contentSize = CGSize(width: 1000, height: 100)
         return contentScrollerView
     }()
@@ -109,7 +108,7 @@ class PropagandaViewController: BaseViewController {
             let btn = UIButton(type: .custom)
             btn.addTarget(self, action: #selector(titleButtonClick(btn:)), for: .touchUpInside)
             btn.setTitleColor(UIColor.black, for: .normal)
-            btn.setTitle("firstButtonClickbtndi", for: .normal)
+            btn.setTitle("首页", for: .normal)
             btn.sizeToFit()
             maxWidth = max(maxWidth, btn.width)
             i += 1
@@ -121,7 +120,7 @@ class PropagandaViewController: BaseViewController {
         maxWidth = max(maxWidth, minWidth)
         btns.forEach { $0.frame = CGRect(x: 0, y: 0, width: maxWidth, height: $0.height) }
         
-        titleScrollerView = ScrollerTitleView(frame: CGRect(x: 0, y: topLayoutGuide.length, width: view.width, height: 0))
+        titleScrollerView = ScrollerTitleView(frame: CGRect(x: 0, y: 88, width: view.width, height: 0))
         titleScrollerView?.titlesBtn = btns
         titleScrollerView?.height = titleScrollerView!.contentSize.height
         titleScrollerView?.setup()
@@ -145,9 +144,9 @@ class PropagandaViewController: BaseViewController {
     
     private func frameForContentControllerAtIndex(index: Int) -> CGRect {
         return CGRect(x: contentScrollerView.width * CGFloat(index),
-                      y: 0,
+                      y: 90,
                       width: contentScrollerView.width,
-                      height: contentScrollerView.height)
+                      height: contentScrollerView.height - 90)
     }
     
     private func hiddenViewControllers() {
@@ -183,22 +182,15 @@ class PropagandaViewController: BaseViewController {
         view.addSubview(contentScrollerView)
         
         viewControllers = [UIViewController]()
-        viewControllers?.append(ViewController1())
-        viewControllers?.append(ViewController2())
-        viewControllers?.append(ViewController2())
-        viewControllers?.append(ViewController2())
-        viewControllers?.append(ViewController2())
-        viewControllers?.append(ViewController2())
-        viewControllers?.append(ViewController2())
-        viewControllers?.append(ViewController2())
-        viewControllers?.append(ViewController2())
-        viewControllers?.append(ViewController2())
-        viewControllers?.append(ViewController2())
-        viewControllers?.append(ViewController2())
-        viewControllers?.append(ViewController2())
+        
+        let sb = UIStoryboard(name: "Propaganda", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "home_vc")
+        viewControllers?.append(vc)
+        
+        
         viewControllers?.append(ViewController2())
         setViewControllers(viewControllers: viewControllers!)
-       
+        
         disPlayVc()
     }
     
@@ -209,16 +201,21 @@ class PropagandaViewController: BaseViewController {
             setUpTitleScrollerView()
         }
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        navigationController?.isNavigationBarHidden = true
         
         titleScrollerView?.updateContentSize()
         
         let contentWidth = view.width
-
-        titleScrollerView?.frame = CGRect(x: 0, y: topLayoutGuide.length, width: contentWidth, height: titleScrollerView?.contentSize.height ?? 0)
-
+        
+        titleScrollerView?.frame = CGRect(x: 0, y: 88, width: contentWidth, height: titleScrollerView?.contentSize.height ?? 0)
+        
         let btns = titleBtns
         var maxWidth: CGFloat = 0
         for btn in btns {
@@ -228,14 +225,14 @@ class PropagandaViewController: BaseViewController {
         }
         let minWidth = (contentWidth - CGFloat(btns.count) * btn_space) / CGFloat(btns.count)
         maxWidth = max(maxWidth, minWidth)
-
+        
         var x = 0.5 * btn_space
-
+        
         for btn in btns {
             btn.frame = CGRect(x: 0, y: 0, width: maxWidth, height: btn.height)
             x += maxWidth + btn_space
         }
-
+        
         markeLine.frame = CGRect(x: (maxWidth + btn_space) * CGFloat(selectIndex),
                                  y: markeLine.frame.minY,
                                  width: maxWidth + btn_space,

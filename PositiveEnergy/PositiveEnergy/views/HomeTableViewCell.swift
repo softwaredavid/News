@@ -9,6 +9,10 @@
 import UIKit
 import SDCycleScrollView
 
+protocol HomeMiddleDelegate: class {
+    func middleBtnItemClick(text: String)
+}
+
 class HomeScrollerCell: UITableViewCell,SDCycleScrollViewDelegate {
    private var adView: SDCycleScrollView?
     
@@ -46,6 +50,7 @@ class HomeScrollerCell: UITableViewCell,SDCycleScrollViewDelegate {
 class HomeMiddleCell: UITableViewCell {
     
     @IBOutlet weak var middleView: UIView!
+    weak var delegate: HomeMiddleDelegate?
     
     
     override func awakeFromNib() {

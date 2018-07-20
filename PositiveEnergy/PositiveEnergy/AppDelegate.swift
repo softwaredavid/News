@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         configWindow()
+        UIApplication.shared.statusBarStyle = .lightContent
         
         return true
     }

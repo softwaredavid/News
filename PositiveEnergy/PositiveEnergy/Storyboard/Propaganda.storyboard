@@ -45,13 +45,61 @@
                     <view key="view" contentMode="scaleToFill" id="4Il-HM-K8D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.39271763392857145" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yoy-Rn-QI9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="68" id="U8d-NZ-fB8" customClass="HomeScrollerCell" customModule="PositiveEnergy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="68"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U8d-NZ-fB8" id="h7E-gP-Jkr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="98" id="5Px-Sa-d3O" customClass="HomeMiddleCell" customModule="PositiveEnergy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="96" width="375" height="98"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Px-Sa-d3O" id="9Fp-lD-QNS">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDv-n7-Ye3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="cDv-n7-Ye3" secondAttribute="trailing" id="9P6-3V-0Aq"/>
+                                                <constraint firstItem="cDv-n7-Ye3" firstAttribute="top" secondItem="9Fp-lD-QNS" secondAttribute="top" id="gTu-Ni-Pou"/>
+                                                <constraint firstItem="cDv-n7-Ye3" firstAttribute="leading" secondItem="9Fp-lD-QNS" secondAttribute="leading" id="hJz-eH-NbS"/>
+                                                <constraint firstAttribute="bottom" secondItem="cDv-n7-Ye3" secondAttribute="bottom" id="r8s-Kq-Yr4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="middleView" destination="cDv-n7-Ye3" id="8d8-ux-fwB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Yoy-Rn-QI9" firstAttribute="top" secondItem="4Il-HM-K8D" secondAttribute="top" id="Na8-bP-M3P"/>
+                            <constraint firstItem="Yoy-Rn-QI9" firstAttribute="bottom" secondItem="GTe-YM-ih5" secondAttribute="bottom" id="P2y-VG-bxa"/>
+                            <constraint firstItem="Yoy-Rn-QI9" firstAttribute="leading" secondItem="GTe-YM-ih5" secondAttribute="leading" id="YWz-x1-uyD"/>
+                            <constraint firstItem="Yoy-Rn-QI9" firstAttribute="trailing" secondItem="GTe-YM-ih5" secondAttribute="trailing" id="lvm-KR-Zhc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GTe-YM-ih5"/>
                     </view>
+                    <connections>
+                        <outlet property="tab" destination="Yoy-Rn-QI9" id="5yY-K0-yWf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Wm-eZ-u9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="81" y="148"/>
+            <point key="canvasLocation" x="80.799999999999997" y="147.97601199400302"/>
         </scene>
     </scenes>
     <resources>

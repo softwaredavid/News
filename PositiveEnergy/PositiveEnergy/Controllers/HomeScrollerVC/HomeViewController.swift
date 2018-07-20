@@ -10,6 +10,9 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    @IBOutlet weak var tab: UITableView!
+    var sourceArray = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

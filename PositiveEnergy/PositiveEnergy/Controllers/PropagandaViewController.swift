@@ -144,7 +144,7 @@ class PropagandaViewController: BaseViewController {
     
     private func frameForContentControllerAtIndex(index: Int) -> CGRect {
         return CGRect(x: contentScrollerView.width * CGFloat(index),
-                      y: 90,
+                      y: 129,
                       width: contentScrollerView.width,
                       height: contentScrollerView.height - 90)
     }

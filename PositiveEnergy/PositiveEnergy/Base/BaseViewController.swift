@@ -13,6 +13,7 @@ class BaseViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        edgesForExtendedLayout = .bottom
         
         view.backgroundColor = UIColor.createColor(colorStr: "#f1f1f1")
 //

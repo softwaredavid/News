@@ -26,8 +26,9 @@ class HomeScrollerCell: UITableViewCell,SDCycleScrollViewDelegate {
             adView!.currentPageDotColor = UIColor.createColor(colorStr: Config.Color.main.rawValue)
             adView!.pageControlAliment = .init(rawValue: 1)
             adView!.autoScrollTimeInterval = 5
+            adView!.backgroundColor = UIColor.white
+            adView!.placeholderImage = UIImage(named: "ad_placeholder")
             contentView.addSubview(adView!)
-            contentView.backgroundColor = UIColor.red
         }
     }
     
@@ -49,10 +50,38 @@ class HomeMiddleCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        createUI()
     }
     
     private func createUI() {
-        
+        let merginWidth = (screen_width - 208) / 5
+        var x: CGFloat = merginWidth
+        var y: CGFloat = merginWidth
+        let imageArray = ["icon_bisai","icon_edu","icon_study","icon_zhibu","icon_leader","icon_falu","icon_book","icon_more"]
+        let titleArray = ["学习竞赛","党员教育","干部学习","陕西e支部","第一书记","政策法规库","数字图书馆","更多..."]
+        var i = 0
+        imageArray.forEach { (img) in
+            x = merginWidth + (merginWidth + 52) * CGFloat((i % 4))
+            y = merginWidth + (merginWidth + 52) * CGFloat((i / 4))
+            
+            let btn = UIButton(type: .custom)
+            btn.frame = CGRect(x: x, y: y, width: 52, height: 52)
+            btn.setImage(UIImage(named: img), for: .normal)
+            btn.addTarget(self, action: #selector(btnClick(btn:)), for: .touchUpInside)
+            btn.tag = 100 + i
+            middleView.addSubview(btn)
+            
+            let label = UILabel(frame: CGRect(x: x, y: btn.frame.maxY, width: 52, height: 20))
+            label.text = titleArray[i]
+            label.textAlignment = .center
+            label.sizeToFit()
+            label.center.x = btn.center.x
+            label.font = UIFont.systemFont(ofSize: UIFont.font14)
+            label.textColor = UIColor.createColor(colorStr: "#333333")
+            middleView.addSubview(label)
+            i = i + 1
+        }
     }
+    
+    @objc func btnClick(btn: UIButton) {}
 }

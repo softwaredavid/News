@@ -47,10 +47,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yoy-Rn-QI9">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="68" id="U8d-NZ-fB8" customClass="HomeScrollerCell" customModule="PositiveEnergy" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeAdcell" rowHeight="68" id="U8d-NZ-fB8" customClass="HomeScrollerCell" customModule="PositiveEnergy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U8d-NZ-fB8" id="h7E-gP-Jkr">
@@ -58,7 +58,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="98" id="5Px-Sa-d3O" customClass="HomeMiddleCell" customModule="PositiveEnergy" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="middel_cell" rowHeight="98" id="5Px-Sa-d3O" customClass="HomeMiddleCell" customModule="PositiveEnergy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="96" width="375" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Px-Sa-d3O" id="9Fp-lD-QNS">
@@ -82,14 +82,18 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="NQf-RQ-asX" id="umS-ny-hgc"/>
+                                    <outlet property="delegate" destination="NQf-RQ-asX" id="i4C-so-uYJ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Yoy-Rn-QI9" firstAttribute="top" secondItem="4Il-HM-K8D" secondAttribute="top" id="Na8-bP-M3P"/>
-                            <constraint firstItem="Yoy-Rn-QI9" firstAttribute="bottom" secondItem="GTe-YM-ih5" secondAttribute="bottom" id="P2y-VG-bxa"/>
-                            <constraint firstItem="Yoy-Rn-QI9" firstAttribute="leading" secondItem="GTe-YM-ih5" secondAttribute="leading" id="YWz-x1-uyD"/>
-                            <constraint firstItem="Yoy-Rn-QI9" firstAttribute="trailing" secondItem="GTe-YM-ih5" secondAttribute="trailing" id="lvm-KR-Zhc"/>
+                            <constraint firstItem="Yoy-Rn-QI9" firstAttribute="trailing" secondItem="GTe-YM-ih5" secondAttribute="trailing" id="5SD-Tr-Ic1"/>
+                            <constraint firstItem="Yoy-Rn-QI9" firstAttribute="top" secondItem="GTe-YM-ih5" secondAttribute="top" id="5wQ-Qf-4QG"/>
+                            <constraint firstItem="Yoy-Rn-QI9" firstAttribute="leading" secondItem="GTe-YM-ih5" secondAttribute="leading" id="pOx-EP-xMU"/>
+                            <constraint firstItem="Yoy-Rn-QI9" firstAttribute="bottom" secondItem="GTe-YM-ih5" secondAttribute="bottom" id="twx-SA-Ykc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GTe-YM-ih5"/>
                     </view>

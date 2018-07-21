@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController,HomeMiddleDelegate {
+class HomeViewController: BaseViewController,HomeMiddleDelegate,HomeScrollerDelegate {
     @IBOutlet weak var tab: UITableView!
     var sourceArray = [String]()
     
@@ -17,6 +17,10 @@ class HomeViewController: BaseViewController,HomeMiddleDelegate {
     }
     
     func middleBtnItemClick(text: String) {
+        
+    }
+    
+    func searchBtnClick() {
         
     }
 }
@@ -37,6 +41,7 @@ extension HomeViewController: UITableViewProtocol {
             
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeAdcell") as! HomeScrollerCell
+        cell.delegate = self
         cell.selectionStyle = .none
         return cell
     }

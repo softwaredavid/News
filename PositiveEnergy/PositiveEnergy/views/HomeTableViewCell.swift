@@ -12,9 +12,13 @@ import SDCycleScrollView
 protocol HomeMiddleDelegate: class {
     func middleBtnItemClick(text: String)
 }
+protocol HomeScrollerDelegate: class {
+    func searchBtnClick()
+}
 
 class HomeScrollerCell: UITableViewCell,SDCycleScrollViewDelegate {
-   private var adView: SDCycleScrollView?
+    private var adView: SDCycleScrollView?
+    weak var delegate: HomeScrollerDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,7 +37,22 @@ class HomeScrollerCell: UITableViewCell,SDCycleScrollViewDelegate {
             adView!.backgroundColor = UIColor.white
             adView!.placeholderImage = UIImage(named: "ad_placeholder")
             contentView.addSubview(adView!)
+            adView!.addSubview(createSearchBtn())
         }
+    }
+    
+    private func createSearchBtn() -> UIButton {
+        let searchBtn = UIButton(type: .custom)
+        searchBtn.frame = CGRect(x: width - 60, y: 165, width: 44, height: 44)
+        searchBtn.setImage(UIImage(named: "search_icon"), for: .normal)
+        searchBtn.addTarget(self, action: #selector(searchBtnClick), for: .touchUpInside)
+        searchBtn.rounderRectRadius(cornerRadius: 22)
+        searchBtn.backgroundColor = UIColor.white
+        return searchBtn
+    }
+    
+    @objc func searchBtnClick() {
+        delegate?.searchBtnClick()
     }
     
     override func layoutSubviews() {

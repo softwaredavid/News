@@ -10,6 +10,7 @@ target 'PositiveEnergy' do
   pod 'Kingfisher', '~> 4.8.0'
   pod 'SDCycleScrollView', '~> 1.75'
   pod 'SDWebImage', '~> 4.3.3'
+  pod 'MJRefresh' ,'~> 3.1.15'
 
   target 'PositiveEnergyTests' do
     inherit! :search_paths

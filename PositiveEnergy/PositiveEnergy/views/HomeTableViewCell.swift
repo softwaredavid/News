@@ -51,6 +51,7 @@ class HomeMiddleCell: UITableViewCell {
     
     @IBOutlet weak var middleView: UIView!
     weak var delegate: HomeMiddleDelegate?
+    let titleArray = ["学习竞赛","党员教育","干部学习","陕西e支部","第一书记","政策法规库","数字图书馆","更多..."]
     
     
     override func awakeFromNib() {
@@ -63,7 +64,6 @@ class HomeMiddleCell: UITableViewCell {
         var x: CGFloat = merginWidth
         var y: CGFloat = merginWidth
         let imageArray = ["icon_bisai","icon_edu","icon_study","icon_zhibu","icon_leader","icon_falu","icon_book","icon_more"]
-        let titleArray = ["学习竞赛","党员教育","干部学习","陕西e支部","第一书记","政策法规库","数字图书馆","更多..."]
         var i = 0
         imageArray.forEach { (img) in
             x = merginWidth + (merginWidth + 52) * CGFloat((i % 4))
@@ -88,5 +88,8 @@ class HomeMiddleCell: UITableViewCell {
         }
     }
     
-    @objc func btnClick(btn: UIButton) {}
+    @objc func btnClick(btn: UIButton) {
+        let tag = btn.tag - 100
+        delegate?.middleBtnItemClick(text: titleArray[tag])
+    }
 }

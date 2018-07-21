@@ -8,13 +8,16 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
-
+class HomeViewController: BaseViewController,HomeMiddleDelegate {
     @IBOutlet weak var tab: UITableView!
     var sourceArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func middleBtnItemClick(text: String) {
+        
     }
 }
 
@@ -28,6 +31,7 @@ extension HomeViewController: UITableViewProtocol {
         if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "middel_cell") as! HomeMiddleCell
             cell.selectionStyle = .none
+            cell.delegate = self
             return cell
         } else {
             

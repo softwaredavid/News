@@ -43,7 +43,7 @@ class HomeScrollerCell: UITableViewCell,SDCycleScrollViewDelegate {
     
     private func createSearchBtn() -> UIButton {
         let searchBtn = UIButton(type: .custom)
-        searchBtn.frame = CGRect(x: width - 60, y: 165, width: 44, height: 44)
+        searchBtn.frame = CGRect(x: width - 44, y: 165, width: 44, height: 44)
         searchBtn.setImage(UIImage(named: "search_icon"), for: .normal)
         searchBtn.addTarget(self, action: #selector(searchBtnClick), for: .touchUpInside)
         searchBtn.rounderRectRadius(cornerRadius: 22)

@@ -15,9 +15,9 @@ struct ResultModel<T: Codable>: Codable {
     var data: T?
     
     enum CodingKeys: String, CodingKey {
-        case code = "Code"
-        case msg = "Msg"
-        case data = "Data"
+        case code = "code"
+        case msg = "info"
+        case data = "data"
     }
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy:CodingKeys.self)

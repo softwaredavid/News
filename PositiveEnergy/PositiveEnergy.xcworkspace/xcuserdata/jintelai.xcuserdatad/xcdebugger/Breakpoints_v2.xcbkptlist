@@ -2,4 +2,293 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Moya/Sources/Moya/MoyaProvider+Internal.swift"
+            timestampString = "554105462.518659"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "createStubFunction(_:forTarget:withCompletion:endpoint:plugins:request:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Moya.MoyaProvider.createStubFunction(Moya.CancellableToken, forTarget: A, withCompletion: (Result.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; (), endpoint: Moya.Endpoint, plugins: Swift.Array&lt;Moya.PluginType&gt;, request: Foundation.URLRequest) -&gt; () -&gt; ()"
+                  moduleName = "Moya"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jintelai/Desktop/demo/News_1/News/PositiveEnergy/Pods/Moya/Sources/Moya/MoyaProvider+Internal.swift"
+                  timestampString = "554105462.660826"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "372">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Moya.MoyaProvider.createStubFunction(Moya.CancellableToken, forTarget: A, withCompletion: (Result.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; (), endpoint: Moya.Endpoint, plugins: Swift.Array&lt;Moya.PluginType&gt;, request: Foundation.URLRequest) -&gt; () -&gt; ()"
+                  moduleName = "Moya"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jintelai/Desktop/demo/News_1/News/PositiveEnergy/Pods/Moya/Sources/Moya/MoyaProvider+Internal.swift"
+                  timestampString = "554105462.6680959"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "93">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Moya/Sources/Moya/MoyaProvider+Internal.swift"
+            timestampString = "554105462.518742"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "createStubFunction(_:forTarget:withCompletion:endpoint:plugins:request:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Moya/Sources/Moya/MoyaProvider+Internal.swift"
+            timestampString = "554105462.518806"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "createStubFunction(_:forTarget:withCompletion:endpoint:plugins:request:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Moya/Sources/Moya/MoyaProvider+Internal.swift"
+            timestampString = "554105462.518864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "createStubFunction(_:forTarget:withCompletion:endpoint:plugins:request:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Moya/Sources/Moya/MoyaProvider+Internal.swift"
+            timestampString = "554105462.5189199"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "createStubFunction(_:forTarget:withCompletion:endpoint:plugins:request:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Moya/Sources/Moya/MoyaProvider+Internal.swift"
+            timestampString = "554105462.518975"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "createStubFunction(_:forTarget:withCompletion:endpoint:plugins:request:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Moya/Sources/Moya/MoyaProvider+Internal.swift"
+            timestampString = "554105462.51903"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "createStubFunction(_:forTarget:withCompletion:endpoint:plugins:request:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Moya/Sources/Moya/MoyaProvider+Internal.swift"
+            timestampString = "554105462.519084"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "createStubFunction(_:forTarget:withCompletion:endpoint:plugins:request:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Moya/Sources/Moya/MoyaProvider+Internal.swift"
+            timestampString = "554105462.5191391"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "performRequest(_:request:callbackQueue:progress:completion:endpoint:stubBehavior:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Moya/Sources/Moya/MoyaProvider+Internal.swift"
+            timestampString = "554105462.519192"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "performRequest(_:request:callbackQueue:progress:completion:endpoint:stubBehavior:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Moya/Sources/Moya/MoyaProvider+Internal.swift"
+            timestampString = "554105462.519244"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "performRequest(_:request:callbackQueue:progress:completion:endpoint:stubBehavior:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Moya/Sources/Moya/MoyaProvider+Internal.swift"
+            timestampString = "554105462.519295"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "performRequest(_:request:callbackQueue:progress:completion:endpoint:stubBehavior:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Moya.MoyaProvider.(performRequest in _29224DEABDDE279B92464CA1BE771359)(A, request: Foundation.URLRequest, callbackQueue: Swift.Optional&lt;__ObjC.DispatchQueue&gt;, progress: Swift.Optional&lt;(Moya.ProgressResponse) -&gt; ()&gt;, completion: (Result.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; (), endpoint: Moya.Endpoint, stubBehavior: Moya.StubBehavior) -&gt; Moya.Cancellable"
+                  moduleName = "Moya"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jintelai/Desktop/demo/News_1/News/PositiveEnergy/Pods/Moya/Sources/Moya/MoyaProvider+Internal.swift"
+                  timestampString = "554105462.75339"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "2326">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Moya.MoyaProvider.(performRequest in _29224DEABDDE279B92464CA1BE771359)(A, request: Foundation.URLRequest, callbackQueue: Swift.Optional&lt;__ObjC.DispatchQueue&gt;, progress: Swift.Optional&lt;(Moya.ProgressResponse) -&gt; ()&gt;, completion: (Result.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; (), endpoint: Moya.Endpoint, stubBehavior: Moya.StubBehavior) -&gt; Moya.Cancellable"
+                  moduleName = "Moya"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jintelai/Desktop/demo/News_1/News/PositiveEnergy/Pods/Moya/Sources/Moya/MoyaProvider+Internal.swift"
+                  timestampString = "554105462.7558759"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "2354">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Moya.MoyaProvider.(performRequest in _29224DEABDDE279B92464CA1BE771359)(A, request: Foundation.URLRequest, callbackQueue: Swift.Optional&lt;__ObjC.DispatchQueue&gt;, progress: Swift.Optional&lt;(Moya.ProgressResponse) -&gt; ()&gt;, completion: (Result.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; (), endpoint: Moya.Endpoint, stubBehavior: Moya.StubBehavior) -&gt; Moya.Cancellable"
+                  moduleName = "Moya"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jintelai/Desktop/demo/News_1/News/PositiveEnergy/Pods/Moya/Sources/Moya/MoyaProvider+Internal.swift"
+                  timestampString = "554105462.758422"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "2416">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Moya/Sources/Moya/MoyaProvider+Internal.swift"
+            timestampString = "554105462.519347"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "performRequest(_:request:callbackQueue:progress:completion:endpoint:stubBehavior:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

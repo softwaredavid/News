@@ -9,9 +9,6 @@
 import Foundation
 import Alamofire
 
-
-
-
 struct File {
     func getUrl() {
         let documnetUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first

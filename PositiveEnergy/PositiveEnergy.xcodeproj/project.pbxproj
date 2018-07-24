@@ -14,9 +14,11 @@
 		A32343CE20E6222400D35618 /* SystemAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32343CD20E6222400D35618 /* SystemAlertView.swift */; };
 		A34E7C6220FC34D7007FD4AB /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34E7C6120FC34D7007FD4AB /* FileManager.swift */; };
 		A34E7C6420FC795E007FD4AB /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34E7C6320FC795E007FD4AB /* TestViewController.swift */; };
+		A35B5B5D2106CA6400AD859D /* HomeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B5B5C2106CA6400AD859D /* HomeMode.swift */; };
+		A35B5B5F2106E9D600AD859D /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B5B5E2106E9D600AD859D /* UITableView+Extension.swift */; };
 		A368F03521016A4300159D06 /* ScrollerTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368F03421016A4300159D06 /* ScrollerTitleView.swift */; };
 		A368F0372101884900159D06 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368F0362101884900159D06 /* ViewController1.swift */; };
-		A368F0392101885400159D06 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368F0382101885400159D06 /* ViewController2.swift */; };
+		A368F0392101885400159D06 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368F0382101885400159D06 /* NewsViewController.swift */; };
 		A368F03C2101BB2C00159D06 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368F03B2101BB2C00159D06 /* HomeViewController.swift */; };
 		A368F03E2101CD6600159D06 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368F03D2101CD6600159D06 /* HomeTableViewCell.swift */; };
 		A36DEAD620E5BD3B0021439F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36DEAD520E5BD3B0021439F /* AppDelegate.swift */; };
@@ -99,9 +101,11 @@
 		A32343CD20E6222400D35618 /* SystemAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemAlertView.swift; sourceTree = "<group>"; };
 		A34E7C6120FC34D7007FD4AB /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		A34E7C6320FC795E007FD4AB /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		A35B5B5C2106CA6400AD859D /* HomeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMode.swift; sourceTree = "<group>"; };
+		A35B5B5E2106E9D600AD859D /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView+Extension.swift"; path = "../../../../../workplace/youlujiaoyu/YouLuGeedu/NiceLoo/Extension/UITableView+Extension.swift"; sourceTree = "<group>"; };
 		A368F03421016A4300159D06 /* ScrollerTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollerTitleView.swift; sourceTree = "<group>"; };
 		A368F0362101884900159D06 /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
-		A368F0382101885400159D06 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		A368F0382101885400159D06 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		A368F03B2101BB2C00159D06 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A368F03D2101CD6600159D06 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		A36DEAD220E5BD3B0021439F /* PositiveEnergy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PositiveEnergy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +210,7 @@
 		A368F03A2101BA7E00159D06 /* HomeScrollerVC */ = {
 			isa = PBXGroup;
 			children = (
+				A368F0382101885400159D06 /* NewsViewController.swift */,
 				A368F03B2101BB2C00159D06 /* HomeViewController.swift */,
 			);
 			path = HomeScrollerVC;
@@ -252,7 +257,6 @@
 				A36DEADE20E5BD3C0021439F /* LaunchScreen.storyboard */,
 				A36DEAE120E5BD3C0021439F /* Info.plist */,
 				A368F0362101884900159D06 /* ViewController1.swift */,
-				A368F0382101885400159D06 /* ViewController2.swift */,
 			);
 			path = PositiveEnergy;
 			sourceTree = "<group>";
@@ -288,6 +292,7 @@
 		A36DEB0E20E5DF140021439F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				A35B5B5E2106E9D600AD859D /* UITableView+Extension.swift */,
 				A3B4448320F9E03A008B67FC /* ToModelExtension.swift */,
 				A36DEB2820E5E3030021439F /* UIImageView+Extension.swift */,
 				A36DEB2620E5E2FB0021439F /* UIApplication+Extension.swift */,
@@ -372,6 +377,7 @@
 		A3F4EF3421007F8B00E312AF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A35B5B5C2106CA6400AD859D /* HomeMode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -656,6 +662,7 @@
 				A36DEB2220E5E2C40021439F /* UIView+Extension.swift in Sources */,
 				A36DEB2020E5E2BE0021439F /* Thread+Extension.swift in Sources */,
 				A3F4EF462100809800E312AF /* ServiceViewController.swift in Sources */,
+				A35B5B5F2106E9D600AD859D /* UITableView+Extension.swift in Sources */,
 				A36DEB1320E5E0150021439F /* UserDefault+Extension.swift in Sources */,
 				A36DEB3820E5E51E0021439F /* SDTextView.swift in Sources */,
 				A3F4EF442100808E00E312AF /* ManagerViewController.swift in Sources */,
@@ -670,7 +677,7 @@
 				A36DEB1520E5E0C30021439F /* UIColor+Extension.swift in Sources */,
 				A36DEB3620E5E4DA0021439F /* NoDataView.swift in Sources */,
 				A36DEAD820E5BD3B0021439F /* ViewController.swift in Sources */,
-				A368F0392101885400159D06 /* ViewController2.swift in Sources */,
+				A368F0392101885400159D06 /* NewsViewController.swift in Sources */,
 				A36DEB0720E5C0F00021439F /* Config.swift in Sources */,
 				A3F4EF422100808300E312AF /* EducationViewController.swift in Sources */,
 				A368F0372101884900159D06 /* ViewController1.swift in Sources */,
@@ -687,6 +694,7 @@
 				A3F269C320E70E5D00F84930 /* TestModel.swift in Sources */,
 				A36DEB2F20E5E31B0021439F /* BaseViewController.swift in Sources */,
 				A36DEB1920E5E2170021439F /* UIFont.swift in Sources */,
+				A35B5B5D2106CA6400AD859D /* HomeMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

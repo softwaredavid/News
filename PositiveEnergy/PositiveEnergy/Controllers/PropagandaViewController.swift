@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Moya
+import RxSwift
 
 class PropagandaViewController: BaseViewController {
     
     var titleScrollerView: ScrollerTitleView?
+    private var disposeBag = DisposeBag()
     var titleBtns: [UIButton] {
         return titleScrollerView?.titlesBtn ?? [UIButton(),UIButton()]
     }
@@ -43,6 +46,10 @@ class PropagandaViewController: BaseViewController {
     private var shouldHiddenTitleScrollerView = false
     private var scrollingAfterTitleButton = false
     
+    private var sourceArray: [HomeMenuModel]?
+    
+    private var forwardSelectBtn: UIButton?
+    
     func hiddenTitleScrollerView(hiden: Bool) {
         shouldHiddenTitleScrollerView = hiden
         if titleScrollerView != nil && hiden {
@@ -52,7 +59,7 @@ class PropagandaViewController: BaseViewController {
             
         } else if !hiden && titleScrollerView == nil {
             
-            setUpTitleScrollerView()
+            setUpTitleScrollerView(modelArray: sourceArray)
             
         }
         
@@ -99,17 +106,24 @@ class PropagandaViewController: BaseViewController {
         return true
     }
     
-    private func setUpTitleScrollerView() {
-        guard let _ = viewControllers else { return }
+    private func setUpTitleScrollerView(modelArray: [HomeMenuModel]?) {
+        guard let _ = viewControllers, let _ = modelArray else { return }
         var btns = [UIButton]()
         var i = 0
         var maxWidth: CGFloat = 0
+        var btnName: String?
         for _ in viewControllers! {
             let btn = UIButton(type: .custom)
             btn.addTarget(self, action: #selector(titleButtonClick(btn:)), for: .touchUpInside)
             btn.setTitleColor(UIColor.black, for: .normal)
-            btn.setTitle("首页", for: .normal)
-            btn.sizeToFit()
+            btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+            btn.setTitleColor(UIColor.createColor(colorStr: Config.Color.main.rawValue), for: .selected)
+            if i == 0 {
+                btnName = "首页"
+                btn.isSelected = true
+                forwardSelectBtn = btn
+            } else { btnName = modelArray![i-1].menuName }
+            btn.setTitle(btnName, for: .normal)
             maxWidth = max(maxWidth, btn.width)
             i += 1
             
@@ -118,10 +132,12 @@ class PropagandaViewController: BaseViewController {
         
         let minWidth: CGFloat = (view.width - CGFloat(btns.count) * btn_space) / CGFloat(btns.count)
         maxWidth = max(maxWidth, minWidth)
-        btns.forEach { $0.frame = CGRect(x: 0, y: 0, width: maxWidth, height: $0.height) }
+        btns.forEach { $0.frame = CGRect(x: 0, y: 0, width: maxWidth, height: 33) }
         
         titleScrollerView = ScrollerTitleView(frame: CGRect(x: 0, y: 88, width: view.width, height: 0))
         titleScrollerView?.titlesBtn = btns
+        titleScrollerView?.showsVerticalScrollIndicator = false
+        titleScrollerView?.showsHorizontalScrollIndicator = false
         titleScrollerView?.height = titleScrollerView!.contentSize.height
         titleScrollerView?.setup()
         view.addSubview(titleScrollerView!)
@@ -129,6 +145,9 @@ class PropagandaViewController: BaseViewController {
     
     @objc func titleButtonClick(btn: UIButton) {
         if titleBtns.contains(btn) {
+            forwardSelectBtn?.isSelected = false
+            btn.isSelected = true
+            forwardSelectBtn = btn
             if let indexs = titleBtns.index(where: { $0 == btn }) {
                 let titleRect = CGRect(x: btn.x - btn_space * 0.5,
                                        y: btn.y,
@@ -137,6 +156,8 @@ class PropagandaViewController: BaseViewController {
                 titleScrollerView?.scrollRectToVisible(titleRect, animated: true)
                 contentScrollerView.scrollRectToVisible(frameForContentControllerAtIndex(index: indexs), animated: true)
                 selectIndex = indexs
+                let vc = viewControllers?[selectIndex] as? NewsViewController
+                vc?.refreshData()
                 scrollingAfterTitleButton = true
             }
         }
@@ -144,7 +165,7 @@ class PropagandaViewController: BaseViewController {
     
     private func frameForContentControllerAtIndex(index: Int) -> CGRect {
         return CGRect(x: contentScrollerView.width * CGFloat(index),
-                      y: 129,
+                      y: 119,
                       width: contentScrollerView.width,
                       height: contentScrollerView.height - 90)
     }
@@ -177,30 +198,48 @@ class PropagandaViewController: BaseViewController {
         contentScrollerView.contentSize = CGSize(width: view.width * CGFloat(i), height: contentScrollerHeight())
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.addSubview(contentScrollerView)
-        
+    private func getMeunData() {
+        let provider = MoyaProvider<Service>()
+        provider.rx.request(.homeMenu(["param":"sss"]))
+            .mapModel(ResultModel<[HomeMenuModel]>.self).subscribe { [weak self] result in
+                switch result {
+                case .success(let obj):
+                    self?.createViewcontrollers(modelArray: obj.data)
+                case .error(let error):
+                    print(error)
+                }
+            }.disposed(by: disposeBag)
+    }
+    
+    private func createViewcontrollers(modelArray: [HomeMenuModel]?) {
+        guard let _ = modelArray else { return }
+        sourceArray = modelArray
         viewControllers = [UIViewController]()
         
         let sb = UIStoryboard(name: "Propaganda", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "home_vc")
         viewControllers?.append(vc)
         
-        
-        viewControllers?.append(ViewController2())
+        for i in 0..<modelArray!.count {
+            let sb = UIStoryboard(name: "Propaganda", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "news_vc") as! NewsViewController
+            vc.menuId = modelArray![i].menuId ?? 0001
+            viewControllers?.append(vc)
+        }
         setViewControllers(viewControllers: viewControllers!)
-        
         disPlayVc()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         if !shouldHiddenTitleScrollerView && titleScrollerView != nil {
-            setUpTitleScrollerView()
+            setUpTitleScrollerView(modelArray: sourceArray)
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.addSubview(contentScrollerView)
+        getMeunData()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         navigationController?.isNavigationBarHidden = false
@@ -222,16 +261,10 @@ class PropagandaViewController: BaseViewController {
             let font: UIFont = btn.titleLabel?.font ?? UIFont.systemFont(ofSize: 14)
             let rect = btn.titleLabel?.text?.boundingRect(with: CGSize(width: 1000, height: titleScrollerView?.height ?? 30), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context:nil)
             maxWidth = max(maxWidth, rect?.size.width ?? 0)
+            btn.frame = CGRect(x: 0, y: 0, width: rect?.size.width ?? 40, height: btn.height)
         }
         let minWidth = (contentWidth - CGFloat(btns.count) * btn_space) / CGFloat(btns.count)
         maxWidth = max(maxWidth, minWidth)
-        
-        var x = 0.5 * btn_space
-        
-        for btn in btns {
-            btn.frame = CGRect(x: 0, y: 0, width: maxWidth, height: btn.height)
-            x += maxWidth + btn_space
-        }
         
         markeLine.frame = CGRect(x: (maxWidth + btn_space) * CGFloat(selectIndex),
                                  y: markeLine.frame.minY,

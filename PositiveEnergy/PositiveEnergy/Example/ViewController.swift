@@ -22,24 +22,24 @@ class ViewController: UIViewController {
         let str: String? = json["str"]
         print(str)
         
-        let provider = MoyaProvider<Service>()
-        provider.rx.request(.login(["":""])).map(ResultModel<String>.self).subscribe { result in
-            switch result {
-            case .success(let obj):
-                print(obj)
-            case .error(let error):
-                print(error)
-            }
-        }.dispose()
-        
-        
-        provider.rx
-            .request(.login(["":""]))
-            .mapModel(ResultModel<String>.self).subscribe( onSuccess: { (model) in
-                let m = model
-            }, onError: { (_) in
-                
-            }).dispose()
+//        let provider = MoyaProvider<Service>()
+//        provider.rx.request(.login(["":""])).map(ResultModel<String>.self).subscribe { result in
+//            switch result {
+//            case .success(let obj):
+//                print(obj)
+//            case .error(let error):
+//                print(error)
+//            }
+//        }.dispose()
+//
+//
+//        provider.rx
+//            .request(.login(["":""]))
+//            .mapModel(ResultModel<String>.self).subscribe( onSuccess: { (model) in
+//                let m = model
+//            }, onError: { (_) in
+//
+//            }).dispose()
     }
     // config congfig
     func configAlmofire() -> SessionManager {

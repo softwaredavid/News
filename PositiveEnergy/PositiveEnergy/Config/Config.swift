@@ -21,7 +21,7 @@ struct Config {
     }
     
     var server: Server {
-        return .developer
+        return .distribute
     }
     
     enum Color: String {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-let btn_space: CGFloat = 8
+let btn_space: CGFloat = 20
 
 class ScrollerTitleView: UIScrollView {
     
@@ -19,7 +19,7 @@ class ScrollerTitleView: UIScrollView {
                 let y = btn.frame.maxY
                 let width = btn.width
                 markeLine = UIView(frame: CGRect(x: 0, y: y, width: width + btn_space, height: 1))
-                markeLine!.backgroundColor = UIColor.red
+                markeLine!.backgroundColor = UIColor.clear
                 addSubview(markeLine!)
             }
         }
@@ -43,7 +43,7 @@ class ScrollerTitleView: UIScrollView {
         }
         if titlesBtn.count != 0 {
             let lastButton = titlesBtn.last!
-            contentSize = CGSize(width: lastButton.frame.maxX + btn_space, height: lastButton.height + 2)
+            contentSize = CGSize(width: lastButton.frame.maxX + btn_space, height: height)
         }
     }
     

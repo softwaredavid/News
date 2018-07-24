@@ -8,8 +8,8 @@
 import Moya
 
 enum Service {
-    case login([String: Any])
-    case register([String: Any])
+    case homeMenu([String: Any])
+    case homeSubMenu(String)
 }
 
 extension Service: TargetType {
@@ -20,18 +20,18 @@ extension Service: TargetType {
     
     var path: String {
         switch self {
-        case .login(let para):
-            return "login/\(para)"
-        case .register(let para):
-            return "register/\(para)"
+        case .homeMenu(_):
+            return "queryMenuFirstWebInfo"
+        case .homeSubMenu(_):
+            return "querySonMenuByFirstMenuCode"
         }
     }
     
     var method: Method {
         switch self {
-        case .login(_):
-            return .get
-        case .register(_):
+        case .homeMenu(_):
+            return .post
+        case .homeSubMenu(_):
             return .post
         }
     }
@@ -42,14 +42,14 @@ extension Service: TargetType {
     
     var task: Task {
         switch self {
-        case .login(let para):
-            return .requestParameters(parameters: para, encoding: URLEncoding.default)
-        case .register(_): break
+        case .homeMenu(let para):
+            return .requestParameters(parameters: para, encoding: JSONEncoding.default)
+        case .homeSubMenu(let para):
+            return .requestParameters(parameters: ["menuCode":para], encoding: JSONEncoding.default)
         }
-        return .requestPlain
     }
     
     var headers: [String : String]? {
-        return nil
+        return ["Content-type":"application/json"]
     }
 }

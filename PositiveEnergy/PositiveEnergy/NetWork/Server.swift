@@ -16,7 +16,7 @@ enum Server {
     var remoteURL: URL {
         let urlString: String = {
             switch self {
-            case .distribute: return "https://"
+            case .distribute: return "http://123.249.3.140:8080/newera/"
             case .developer: return "https://"
             case .local: return "https://"
             }

@@ -257,11 +257,13 @@ class PropagandaViewController: BaseViewController {
         
         let btns = titleBtns
         var maxWidth: CGFloat = 0
+        var btnX: CGFloat = btn_space
         for btn in btns {
             let font: UIFont = btn.titleLabel?.font ?? UIFont.systemFont(ofSize: 14)
             let rect = btn.titleLabel?.text?.boundingRect(with: CGSize(width: 1000, height: titleScrollerView?.height ?? 30), options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context:nil)
             maxWidth = max(maxWidth, rect?.size.width ?? 0)
-            btn.frame = CGRect(x: 0, y: 0, width: rect?.size.width ?? 40, height: btn.height)
+            btn.frame = CGRect(x: btnX, y: 0, width: rect?.size.width ?? 40, height: btn.height)
+            btnX = btn.frame.maxX + btn_space
         }
         let minWidth = (contentWidth - CGFloat(btns.count) * btn_space) / CGFloat(btns.count)
         maxWidth = max(maxWidth, minWidth)
@@ -298,7 +300,6 @@ extension PropagandaViewController: UIScrollViewDelegate {
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        
         if scrollView == contentScrollerView {
             
             let x = targetContentOffset.pointee.x
@@ -308,8 +309,12 @@ extension PropagandaViewController: UIScrollViewDelegate {
             
             if contentViewMoveLength < -contentview_width * 0.5 {
                 selectIndex -= 1
+                let vc = viewControllers?[selectIndex] as? NewsViewController
+                vc?.refreshData()
             } else if contentViewMoveLength > contentview_width * 0.5 {
                 selectIndex += 1
+                let vc = viewControllers?[selectIndex] as? NewsViewController
+                vc?.refreshData()
             }
             
             if abs(velocity.x) >= minEndDraggingVelocity {

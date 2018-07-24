@@ -169,6 +169,11 @@ extension NewsViewController: UITableViewProtocol {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if tabSourceArray.count < indexPath.row - 1 { return }
+        let id = tabSourceArray[indexPath.row - 1].contentId
+        let sb = UIStoryboard(name: "Propaganda", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "web_vc") as! NewsDetailViewController
+        vc.id = id ?? 01
+        navigationController?.push(vc: vc)
     }
 }

@@ -21,6 +21,7 @@ protocol HomeScrollerDelegate: class {
 class HomeImgLoopCell: UITableViewCell,SDCycleScrollViewDelegate {
     private var adView: SDCycleScrollView?
     weak var delegate: HomeScrollerDelegate?
+    private var modelArray: [HomeLoopImg]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,13 +51,19 @@ class HomeImgLoopCell: UITableViewCell,SDCycleScrollViewDelegate {
     }
     
     func configData(model: [HomeLoopImg]) {
+        self.modelArray = model
         var array = [String]()
         model.forEach { array.append($0.icon ?? "") }
         adView?.imageURLStringsGroup = array
     }
     
     func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didSelectItemAt index: Int) {
-        
+        let id = modelArray?[index].contentId ?? 01
+        let sb = UIStoryboard(name: "Propaganda", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "web_vc") as! NewsDetailViewController
+        vc.id = id
+        let nav = UINavigationController.getCurrentNav()
+        nav?.push(vc: vc)
     }
 }
 
@@ -64,6 +71,8 @@ class HomeImgLoopCell: UITableViewCell,SDCycleScrollViewDelegate {
 class HomeScrollerCell: UITableViewCell,SDCycleScrollViewDelegate {
     private var adView: SDCycleScrollView?
     weak var delegate: HomeScrollerDelegate?
+    private var modelArray: [HomeLoopImg]?
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -108,12 +117,18 @@ class HomeScrollerCell: UITableViewCell,SDCycleScrollViewDelegate {
     
     func configData(model: [HomeLoopImg]) {
         var array = [String]()
+        self.modelArray = model
         model.forEach { array.append($0.icon ?? "") }
         adView?.imageURLStringsGroup = array
     }
     
     func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didSelectItemAt index: Int) {
-        
+        let id = modelArray?[index].contentId ?? 01
+        let sb = UIStoryboard(name: "Propaganda", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "web_vc") as! NewsDetailViewController
+        vc.id = id
+        let nav = UINavigationController.getCurrentNav()
+        nav?.push(vc: vc)
     }
 }
 

@@ -18,7 +18,6 @@
 		A34E7C6220FC34D7007FD4AB /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34E7C6120FC34D7007FD4AB /* FileManager.swift */; };
 		A34E7C6420FC795E007FD4AB /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34E7C6320FC795E007FD4AB /* TestViewController.swift */; };
 		A35B5B5D2106CA6400AD859D /* HomeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B5B5C2106CA6400AD859D /* HomeMode.swift */; };
-		A35B5B5F2106E9D600AD859D /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B5B5E2106E9D600AD859D /* UITableView+Extension.swift */; };
 		A368F03521016A4300159D06 /* ScrollerTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368F03421016A4300159D06 /* ScrollerTitleView.swift */; };
 		A368F0372101884900159D06 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368F0362101884900159D06 /* ViewController1.swift */; };
 		A368F0392101885400159D06 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368F0382101885400159D06 /* NewsViewController.swift */; };
@@ -67,6 +66,7 @@
 		A3F4EF442100808E00E312AF /* ManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F4EF432100808E00E312AF /* ManagerViewController.swift */; };
 		A3F4EF462100809800E312AF /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F4EF452100809800E312AF /* ServiceViewController.swift */; };
 		BD12D08F5A408289073FABBF /* Pods_PositiveEnergyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A52AAFB5AB1EFF920D64445 /* Pods_PositiveEnergyUITests.framework */; };
+		D90707EB2107561D002DFECE /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90707EA2107561D002DFECE /* UITableView+Extension.swift */; };
 		F8258FF9F4CC270E54920E1A /* Pods_PositiveEnergyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD058D3CA4F1CDB1466F52B9 /* Pods_PositiveEnergyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,7 +108,6 @@
 		A34E7C6120FC34D7007FD4AB /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		A34E7C6320FC795E007FD4AB /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		A35B5B5C2106CA6400AD859D /* HomeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMode.swift; sourceTree = "<group>"; };
-		A35B5B5E2106E9D600AD859D /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView+Extension.swift"; path = "../../../../../workplace/youlujiaoyu/YouLuGeedu/NiceLoo/Extension/UITableView+Extension.swift"; sourceTree = "<group>"; };
 		A368F03421016A4300159D06 /* ScrollerTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollerTitleView.swift; sourceTree = "<group>"; };
 		A368F0362101884900159D06 /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
 		A368F0382101885400159D06 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +167,7 @@
 		BD058D3CA4F1CDB1466F52B9 /* Pods_PositiveEnergyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PositiveEnergyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC4FCE37E114AACFB44C5CF /* Pods-PositiveEnergy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PositiveEnergy.release.xcconfig"; path = "Pods/Target Support Files/Pods-PositiveEnergy/Pods-PositiveEnergy.release.xcconfig"; sourceTree = "<group>"; };
 		CFC8FBE67654BE58C48088B4 /* Pods-PositiveEnergyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PositiveEnergyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PositiveEnergyUITests/Pods-PositiveEnergyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D90707EA2107561D002DFECE /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,7 +299,7 @@
 		A36DEB0E20E5DF140021439F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				A35B5B5E2106E9D600AD859D /* UITableView+Extension.swift */,
+				D90707EA2107561D002DFECE /* UITableView+Extension.swift */,
 				A3B4448320F9E03A008B67FC /* ToModelExtension.swift */,
 				A36DEB2820E5E3030021439F /* UIImageView+Extension.swift */,
 				A36DEB2620E5E2FB0021439F /* UIApplication+Extension.swift */,
@@ -673,12 +673,12 @@
 				A36DEB2220E5E2C40021439F /* UIView+Extension.swift in Sources */,
 				A36DEB2020E5E2BE0021439F /* Thread+Extension.swift in Sources */,
 				A3F4EF462100809800E312AF /* ServiceViewController.swift in Sources */,
-				A35B5B5F2106E9D600AD859D /* UITableView+Extension.swift in Sources */,
 				A36DEB1320E5E0150021439F /* UserDefault+Extension.swift in Sources */,
 				A36DEB3820E5E51E0021439F /* SDTextView.swift in Sources */,
 				A3F4EF442100808E00E312AF /* ManagerViewController.swift in Sources */,
 				A36DEB1E20E5E2B80021439F /* Dictionary+Extension.swift in Sources */,
 				A34E7C6420FC795E007FD4AB /* TestViewController.swift in Sources */,
+				D90707EB2107561D002DFECE /* UITableView+Extension.swift in Sources */,
 				A32343CE20E6222400D35618 /* SystemAlertView.swift in Sources */,
 				A368F03521016A4300159D06 /* ScrollerTitleView.swift in Sources */,
 				A36DEB3220E5E3F00021439F /* WebViewController.swift in Sources */,
@@ -881,7 +881,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GY25P2VDC8;
+				DEVELOPMENT_TEAM = MS239G7WLM;
 				INFOPLIST_FILE = PositiveEnergy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -901,7 +901,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GY25P2VDC8;
+				DEVELOPMENT_TEAM = MS239G7WLM;
 				INFOPLIST_FILE = PositiveEnergy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

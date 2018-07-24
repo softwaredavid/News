@@ -24,6 +24,7 @@ class HomeImgLoopCell: UITableViewCell,SDCycleScrollViewDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        contentView.backgroundColor = UIColor.red
         createUI()
     }
     

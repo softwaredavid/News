@@ -16,10 +16,20 @@ class HomeViewController: BaseViewController,HomeMiddleDelegate,HomeScrollerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configTab()
         getLoopImg()
         
         tab.register(UINib(nibName: "HomeNewsBigCell", bundle: nil), forCellReuseIdentifier: "homeBigCell")
         tab.register(UINib(nibName: "HomeNewsNormalCell", bundle: nil), forCellReuseIdentifier: "homeNormalCell")
+    }
+    
+    private func configTab() {
+        tab.refresh(header: { [weak self] in
+            self?.getLoopImg()
+        }) {
+            
+        }
+        tab.mj_footer.isHidden = true
     }
     
     private func getLoopImg() {
@@ -32,6 +42,7 @@ class HomeViewController: BaseViewController,HomeMiddleDelegate,HomeScrollerDele
         HomeRequest.getTopNews(code: "000001") { [weak self] (result) in
             guard let _ = result else { return }
             self?.tabSourceArray = result!
+            self?.tab.endResh()
             self?.tab.reloadData()
         }
     }
@@ -84,7 +95,7 @@ extension HomeViewController: UITableViewProtocol {
             return 219
         case 1:
             let merginWidth = (screen_width - 208) / 5
-            return merginWidth + (merginWidth + 52) * 2
+            return merginWidth + (merginWidth + 52) * 2 + 8
         case 2:
             return 220
         default:

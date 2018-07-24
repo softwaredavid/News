@@ -167,7 +167,7 @@ class PropagandaViewController: BaseViewController {
         return CGRect(x: contentScrollerView.width * CGFloat(index),
                       y: 119,
                       width: contentScrollerView.width,
-                      height: contentScrollerView.height - 90)
+                      height: contentScrollerView.height - 119)
     }
     
     private func hiddenViewControllers() {

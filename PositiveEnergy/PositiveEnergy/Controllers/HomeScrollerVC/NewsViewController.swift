@@ -17,6 +17,7 @@ class NewsViewController: BaseViewController {
     fileprivate var tabHeaderView: ScrollerTitleView?
     private var loopImgArray = [HomeLoopImg]()
     private var tabSourceArray = [HomeNewsModel]()
+    private var homeMenuArray = [HomeMenuModel]()
     
     @IBOutlet weak var tab: UITableView!
     
@@ -40,6 +41,7 @@ class NewsViewController: BaseViewController {
         }) {
             
         }
+        tab.mj_footer.isHidden = true
     }
     
     private func getLoopImg() {
@@ -53,6 +55,7 @@ class NewsViewController: BaseViewController {
         HomeRequest.getTopNews(code: id) { [weak self] (result) in
             guard let _ = result else { return }
             self?.tabSourceArray = result!
+            self?.tab.endResh()
             self?.tab.reloadData()
         }
     }
@@ -91,6 +94,7 @@ class NewsViewController: BaseViewController {
     
     private func createButton(modelArray: [HomeMenuModel]?) -> [UIButton]? {
         guard let _ = modelArray else { return nil }
+        homeMenuArray = modelArray!
         var btns = [UIButton]()
         var btnName: String?
         for i in 0..<modelArray!.count {
@@ -102,6 +106,7 @@ class NewsViewController: BaseViewController {
             btnName = modelArray![i].menuName
             btn.setTitle(btnName, for: .normal)
             btns.append(btn)
+            btn.tag = i + 200
         }
         layoutSubView(btns: btns)
         return btns
@@ -116,7 +121,9 @@ class NewsViewController: BaseViewController {
     }
     
     @objc func titleButtonClick(btn: UIButton) {
-    
+        /*let tag = btn.tag - 200
+        menuId = homeMenuArray[tag].menuId ?? 1
+        getLoopImg()*/
     }
     
     func refreshData() {
@@ -136,6 +143,7 @@ extension NewsViewController: UITableViewProtocol {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "home_img_loop") as! HomeImgLoopCell
             cell.configData(model: loopImgArray)
+            return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "homeBigSubCell") as! HomeBigCell
             cell.selectionStyle = .none
@@ -147,7 +155,6 @@ extension NewsViewController: UITableViewProtocol {
             cell.configData(model: tabSourceArray[indexPath.row - 1])
             return cell
         }
-        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

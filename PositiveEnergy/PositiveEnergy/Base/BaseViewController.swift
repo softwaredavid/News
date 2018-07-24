@@ -13,8 +13,6 @@ class BaseViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        edgesForExtendedLayout = .bottom
-        
         view.backgroundColor = UIColor.createColor(colorStr: "#f1f1f1")
 //
 //        let frame = CGRect(x: 0, y: 0, width: 200, height: 200)

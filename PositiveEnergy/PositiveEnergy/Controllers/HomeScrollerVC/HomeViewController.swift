@@ -106,6 +106,7 @@ extension HomeViewController: UITableViewProtocol {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 1 { return }
         if tabSourceArray.count < indexPath.row - 2 { return }
         let id = tabSourceArray[indexPath.row - 2].contentId
         let sb = UIStoryboard(name: "Propaganda", bundle: nil)

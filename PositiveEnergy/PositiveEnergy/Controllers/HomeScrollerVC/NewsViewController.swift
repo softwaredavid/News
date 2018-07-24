@@ -121,9 +121,18 @@ class NewsViewController: BaseViewController {
     }
     
     @objc func titleButtonClick(btn: UIButton) {
-        /*let tag = btn.tag - 200
-        menuId = homeMenuArray[tag].menuId ?? 1
-        getLoopImg()*/
+        let tag = btn.tag - 200
+        let id = homeMenuArray[tag].menuId ?? 1
+        let provider = MoyaProvider<Service>()
+        provider.rx.request(.getNewsSub(String(format: "%06d", id)))
+            .mapModel(ResultModel<[HomeMenuModel]>.self).subscribe { [weak self] result in
+                switch result {
+                case .success(let obj):
+                    self?.tab.endResh()
+                case .error(let error):
+                    print(error)
+                }
+            }.disposed(by: disposeBag)
     }
     
     func refreshData() {

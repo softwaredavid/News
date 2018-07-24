@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class HomeViewController: BaseViewController,HomeMiddleDelegate,HomeScrollerDelegate {
     @IBOutlet weak var tab: UITableView!
     var sourceArray = [String]()
@@ -101,5 +103,14 @@ extension HomeViewController: UITableViewProtocol {
         default:
             return 118
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let id = tabSourceArray[indexPath.row - 2].contentId
+        let sb = UIStoryboard(name: "Propaganda", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "web_vc") as! NewsDetailViewController
+        vc.id = id ?? 01
+        navigationController?.push(vc: vc)
     }
 }

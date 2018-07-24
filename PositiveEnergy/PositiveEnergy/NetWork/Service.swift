@@ -13,6 +13,7 @@ enum Service {
     case getNewsSub(String)
     case getNewsTop(code:String, days: Int)
     case getLoopImg(code: String)
+    case newsDetail(code: String)
 }
 
 extension Service: TargetType {
@@ -33,6 +34,8 @@ extension Service: TargetType {
             return "queryContentByMenuCodeAllContent"
         case .getLoopImg(_):
             return "queryContentIsSlideWebInfo"
+        case .newsDetail(_):
+            return "queryContentDetailByContentId"
         }
     }
     
@@ -46,7 +49,9 @@ extension Service: TargetType {
             return .post
         case .getNewsTop(_, _):
             return .post
-        case .getLoopImg(let code):
+        case .getLoopImg(_):
+            return .post
+        case .newsDetail(_):
             return .post
         }
     }
@@ -67,6 +72,8 @@ extension Service: TargetType {
             return .requestParameters(parameters: ["menuCode":code,"num":days], encoding: JSONEncoding.default)
         case .getLoopImg(let code):
             return .requestParameters(parameters: ["menuCode":code], encoding: JSONEncoding.default)
+        case .newsDetail(let code):
+            return .requestParameters(parameters: ["contentId":code], encoding: JSONEncoding.default)
         }
     }
     

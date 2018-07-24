@@ -59,3 +59,17 @@ struct HomeNewsModel: Codable {
         return "\(formate.date(from: "\(date)") ?? Date())".subString(start: 0, length: 10)
     }
 }
+
+struct NewsDetail: Codable {
+    var source: String?
+    var addTime: TimeInterval?
+    var contentTitle: String?
+    var contentText: String?
+    
+    var createTime: String? {
+        let date = Date(timeIntervalSince1970: addTime ?? 0)
+        let formate = DateFormatter()
+        formate.dateFormat = "YYYY-MM-dd"
+        return "\(formate.date(from: "\(date)") ?? Date())".subString(start: 0, length: 10)
+    }
+}

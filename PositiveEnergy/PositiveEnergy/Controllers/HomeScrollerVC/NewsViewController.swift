@@ -167,4 +167,8 @@ extension NewsViewController: UITableViewProtocol {
             return 118
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }

@@ -16,6 +16,47 @@ protocol HomeScrollerDelegate: class {
     func searchBtnClick()
 }
 
+class HomeImgLoopCell: UITableViewCell,SDCycleScrollViewDelegate {
+    private var adView: SDCycleScrollView?
+    weak var delegate: HomeScrollerDelegate?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        createUI()
+    }
+    
+    private func createUI() {
+        if adView == nil {
+            let frame = CGRect(x: 0, y: 0, width: width, height: height)
+            adView = SDCycleScrollView(frame: frame, delegate: self
+                , placeholderImage: UIImage(named: "no_course_img"))
+            adView!.pageDotColor = UIColor.white
+            adView!.currentPageDotColor = UIColor.createColor(colorStr: Config.Color.main.rawValue)
+            adView!.pageControlAliment = .init(rawValue: 1)
+            adView!.autoScrollTimeInterval = 5
+            adView!.backgroundColor = UIColor.white
+            adView!.placeholderImage = UIImage(named: "ad_placeholder")
+            contentView.addSubview(adView!)
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let frame = CGRect(x: 0, y: 0, width: width, height: height)
+        adView?.frame = frame
+    }
+    
+    func configData(model: [HomeLoopImg]) {
+        var array = [String]()
+        model.forEach { array.append($0.icon ?? "") }
+        adView?.imageURLStringsGroup = array
+    }
+    
+    func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didSelectItemAt index: Int) {
+        
+    }
+}
+
 class HomeScrollerCell: UITableViewCell,SDCycleScrollViewDelegate {
     private var adView: SDCycleScrollView?
     weak var delegate: HomeScrollerDelegate?
@@ -59,6 +100,12 @@ class HomeScrollerCell: UITableViewCell,SDCycleScrollViewDelegate {
         super.layoutSubviews()
         let frame = CGRect(x: 0, y: 0, width: width, height: height)
         adView?.frame = frame
+    }
+    
+    func configData(model: [HomeLoopImg]) {
+        var array = [String]()
+        model.forEach { array.append($0.icon ?? "") }
+        adView?.imageURLStringsGroup = array
     }
     
     func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didSelectItemAt index: Int) {

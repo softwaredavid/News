@@ -15,6 +15,7 @@ class NewsViewController: BaseViewController {
     var menuId: Int = 00001
     private var disposeBag = DisposeBag()
     fileprivate var tabHeaderView: ScrollerTitleView?
+    private var loopImgArray = [HomeLoopImg]()
     
     @IBOutlet weak var tab: UITableView!
     
@@ -36,6 +37,16 @@ class NewsViewController: BaseViewController {
             
         }
     }
+    
+    private func getLoopImg() {
+        let id = String(format: "%06d", menuId)
+        HomeRequest.getLoopImg(code: id) { [weak self] (result) in
+            guard let _ = result else { return }
+            self?.loopImgArray = result!
+            self?.tab.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+        }
+    }
+    
     private func getMeunData() {
         let id = String(format: "%06d", menuId)
         let provider = MoyaProvider<Service>()
@@ -100,6 +111,7 @@ class NewsViewController: BaseViewController {
     
     func refreshData() {
         getMeunData()
+        getLoopImg()
     }
 }
 
@@ -110,7 +122,13 @@ extension NewsViewController: UITableViewProtocol {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "home_img_loop") as! HomeImgLoopCell
+        cell.configData(model: loopImgArray)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return UITableViewCell()
+        return 219
     }
 }

@@ -11,12 +11,20 @@ import UIKit
 class HomeViewController: BaseViewController,HomeMiddleDelegate,HomeScrollerDelegate {
     @IBOutlet weak var tab: UITableView!
     var sourceArray = [String]()
+    private var loopImgArray = [HomeLoopImg]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        HomeRequest.getLoopImg(code: "000001")
+        getLoopImg()
     }
     
+    private func getLoopImg() {
+        HomeRequest.getLoopImg(code: "000001") { [weak self] (result) in
+            guard let _ = result else { return }
+            self?.loopImgArray = result!
+            self?.tab.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+        }
+    }
     func middleBtnItemClick(text: String) {
         
     }
@@ -43,6 +51,7 @@ extension HomeViewController: UITableViewProtocol {
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeAdcell") as! HomeScrollerCell
         cell.delegate = self
+        cell.configData(model: loopImgArray)
         cell.selectionStyle = .none
         return cell
     }

@@ -14,6 +14,7 @@ class HomeViewController: BaseViewController,HomeMiddleDelegate,HomeScrollerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        HomeRequest.getLoopImg(code: "000001")
     }
     
     func middleBtnItemClick(text: String) {

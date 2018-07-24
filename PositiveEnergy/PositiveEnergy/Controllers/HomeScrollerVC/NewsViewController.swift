@@ -28,8 +28,10 @@ class NewsViewController: BaseViewController {
         
     }
     private func configTab() {
-        tab.refresh(header: {
-           refreshData()
+        tab.delegate = self
+        tab.dataSource = self
+        tab.refresh(header: { [weak self] in
+           self?.refreshData()
         }) {
             
         }
@@ -51,11 +53,11 @@ class NewsViewController: BaseViewController {
     
     private func configTabHeaderView() {
         if tabHeaderView != nil { return }
-        tabHeaderView = ScrollerTitleView(frame: CGRect(x: 0, y: 88, width: view.width, height: 33))
+        tabHeaderView = ScrollerTitleView(frame: CGRect(x: 0, y: 0, width: view.width, height: 33))
         tabHeaderView!.showsVerticalScrollIndicator = false
         tabHeaderView!.showsHorizontalScrollIndicator = false
         tabHeaderView!.setup()
-        tab.tableHeaderView = tabHeaderView
+        view.addSubview(tabHeaderView!)
     }
     
     private func configTabHeaderData(modelArray: [HomeMenuModel]?) {
@@ -98,5 +100,17 @@ class NewsViewController: BaseViewController {
     
     func refreshData() {
         getMeunData()
+    }
+}
+
+extension NewsViewController: UITableViewProtocol {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        return UITableViewCell()
     }
 }

@@ -10,6 +10,9 @@ import Moya
 enum Service {
     case homeMenu([String: Any])
     case homeSubMenu(String)
+    case getNewsSub(String)
+    case getNewsTop(code:String, days: Int)
+    case getLoopImg(code: String)
 }
 
 extension Service: TargetType {
@@ -24,6 +27,12 @@ extension Service: TargetType {
             return "queryMenuFirstWebInfo"
         case .homeSubMenu(_):
             return "querySonMenuByFirstMenuCode"
+        case .getNewsSub(_):
+            return "queryContentIsTopWebInfo"
+        case .getNewsTop(_):
+            return "queryContentByMenuCodeAllContent"
+        case .getLoopImg(_):
+            return "queryContentIsSlideWebInfo"
         }
     }
     
@@ -32,6 +41,12 @@ extension Service: TargetType {
         case .homeMenu(_):
             return .post
         case .homeSubMenu(_):
+            return .post
+        case .getNewsSub(_):
+            return .post
+        case .getNewsTop(_, _):
+            return .post
+        case .getLoopImg(let code):
             return .post
         }
     }
@@ -46,6 +61,12 @@ extension Service: TargetType {
             return .requestParameters(parameters: para, encoding: JSONEncoding.default)
         case .homeSubMenu(let para):
             return .requestParameters(parameters: ["menuCode":para], encoding: JSONEncoding.default)
+        case .getNewsSub(let para):
+            return .requestParameters(parameters: ["menuCode":para], encoding: JSONEncoding.default)
+        case .getNewsTop(let code, let days):
+            return .requestParameters(parameters: ["menuCode":code,"num":days], encoding: JSONEncoding.default)
+        case .getLoopImg(let code):
+            return .requestParameters(parameters: ["menuCode":code], encoding: JSONEncoding.default)
         }
     }
     

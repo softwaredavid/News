@@ -16,6 +16,7 @@ class NewsViewController: BaseViewController {
     private var disposeBag = DisposeBag()
     fileprivate var tabHeaderView: ScrollerTitleView?
     private var loopImgArray = [HomeLoopImg]()
+    private var tabSourceArray = [HomeNewsModel]()
     
     @IBOutlet weak var tab: UITableView!
     
@@ -23,6 +24,9 @@ class NewsViewController: BaseViewController {
         super.viewDidLoad()
         configTab()
         configTabHeaderView()
+        
+        tab.register(UINib(nibName: "HomeNewsBigCell", bundle: nil), forCellReuseIdentifier: "homeBigSubCell")
+        tab.register(UINib(nibName: "HomeNewsNormalCell", bundle: nil), forCellReuseIdentifier: "homeNormalSubCell")
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -44,6 +48,12 @@ class NewsViewController: BaseViewController {
             guard let _ = result else { return }
             self?.loopImgArray = result!
             self?.tab.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+        }
+        
+        HomeRequest.getTopNews(code: id) { [weak self] (result) in
+            guard let _ = result else { return }
+            self?.tabSourceArray = result!
+            self?.tab.reloadData()
         }
     }
     
@@ -118,17 +128,37 @@ class NewsViewController: BaseViewController {
 extension NewsViewController: UITableViewProtocol {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return 1 + tabSourceArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "home_img_loop") as! HomeImgLoopCell
-        cell.configData(model: loopImgArray)
-        return cell
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "home_img_loop") as! HomeImgLoopCell
+            cell.configData(model: loopImgArray)
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "homeBigSubCell") as! HomeBigCell
+            cell.selectionStyle = .none
+            cell.configData(model: tabSourceArray[indexPath.row - 1])
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "homeNormalSubCell") as! HomeNormalCell
+            cell.selectionStyle = .none
+            cell.configData(model: tabSourceArray[indexPath.row - 1])
+            return cell
+        }
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0:
+            return 219
+        case 1:
+            return 220
+        default:
+            return 220
+        }
         
-        return 219
     }
 }

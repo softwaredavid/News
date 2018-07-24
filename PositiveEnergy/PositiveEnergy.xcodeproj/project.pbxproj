@@ -12,6 +12,8 @@
 		6755FF0D8560C022D527A667 /* Pods_BaseProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33034046C178A61BACEB7106 /* Pods_BaseProjectTests.framework */; };
 		A32343CC20E60D8500D35618 /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32343CB20E60D8500D35618 /* AppUtils.swift */; };
 		A32343CE20E6222400D35618 /* SystemAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32343CD20E6222400D35618 /* SystemAlertView.swift */; };
+		A323C34D21070CD700EF59BD /* HomeNewsBigCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A323C34C21070CD700EF59BD /* HomeNewsBigCell.xib */; };
+		A323C34F21070CEF00EF59BD /* HomeNewsNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A323C34E21070CEF00EF59BD /* HomeNewsNormalCell.xib */; };
 		A34E7C6220FC34D7007FD4AB /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34E7C6120FC34D7007FD4AB /* FileManager.swift */; };
 		A34E7C6420FC795E007FD4AB /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34E7C6320FC795E007FD4AB /* TestViewController.swift */; };
 		A35B5B5D2106CA6400AD859D /* HomeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B5B5C2106CA6400AD859D /* HomeMode.swift */; };
@@ -99,6 +101,8 @@
 		8364366FF68BD5C04CB6597C /* Pods_PositiveEnergy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PositiveEnergy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A32343CB20E60D8500D35618 /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
 		A32343CD20E6222400D35618 /* SystemAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemAlertView.swift; sourceTree = "<group>"; };
+		A323C34C21070CD700EF59BD /* HomeNewsBigCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNewsBigCell.xib; sourceTree = "<group>"; };
+		A323C34E21070CEF00EF59BD /* HomeNewsNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNewsNormalCell.xib; sourceTree = "<group>"; };
 		A34E7C6120FC34D7007FD4AB /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		A34E7C6320FC795E007FD4AB /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		A35B5B5C2106CA6400AD859D /* HomeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMode.swift; sourceTree = "<group>"; };
@@ -398,6 +402,8 @@
 				A3F4EF392100804700E312AF /* Education.storyboard */,
 				A3F4EF3B2100805100E312AF /* Manager.storyboard */,
 				A3F4EF3D2100805C00E312AF /* Service.storyboard */,
+				A323C34C21070CD700EF59BD /* HomeNewsBigCell.xib */,
+				A323C34E21070CEF00EF59BD /* HomeNewsNormalCell.xib */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -530,9 +536,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A36DEAE020E5BD3C0021439F /* LaunchScreen.storyboard in Resources */,
+				A323C34F21070CEF00EF59BD /* HomeNewsNormalCell.xib in Resources */,
 				A3F4EF382100800E00E312AF /* Propaganda.storyboard in Resources */,
 				A3F4EF3C2100805100E312AF /* Manager.storyboard in Resources */,
 				A36DEADD20E5BD3C0021439F /* Assets.xcassets in Resources */,
+				A323C34D21070CD700EF59BD /* HomeNewsBigCell.xib in Resources */,
 				A36DEADB20E5BD3B0021439F /* Main.storyboard in Resources */,
 				A3F4EF3A2100804700E312AF /* Education.storyboard in Resources */,
 				A3F4EF3E2100805C00E312AF /* Service.storyboard in Resources */,

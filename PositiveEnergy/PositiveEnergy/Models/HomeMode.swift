@@ -21,6 +21,19 @@ struct HomeRequest {
                 }
             }
     }
+    
+    static func getTopNews(code: String,success: @escaping ([HomeNewsModel]?) -> ()) {
+        let provider = MoyaProvider<Service>()
+        _ = provider.rx.request(.getNewsTop(code: code, days: 2))
+            .mapModel(ResultModel<[HomeNewsModel]>.self).subscribe { result in
+                switch result {
+                case .success(let obj):
+                    success(obj.data)
+                case .error(let error):
+                    print(error)
+                }
+        }
+    }
 }
 
 struct HomeMenuModel: Codable {
@@ -31,4 +44,18 @@ struct HomeLoopImg: Codable {
     var icon: String?
     var contentTitle: String?
     var contentId: Int?
+}
+struct HomeNewsModel: Codable {
+    var icon: String?
+    var contentTitle: String
+    var contentId: Int?
+    var addTime: TimeInterval?
+    var isTop: Int?
+    
+    var createTime: String? {
+        let date = Date(timeIntervalSince1970: addTime ?? 0)
+        let formate = DateFormatter()
+        formate.dateFormat = "YYYY-MM-dd"
+        return "\(formate.date(from: "\(date)") ?? Date())".subString(start: 0, length: 10)
+    }
 }

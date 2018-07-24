@@ -8,6 +8,7 @@
 
 import UIKit
 import SDCycleScrollView
+import Kingfisher
 
 protocol HomeMiddleDelegate: class {
     func middleBtnItemClick(text: String)
@@ -15,6 +16,7 @@ protocol HomeMiddleDelegate: class {
 protocol HomeScrollerDelegate: class {
     func searchBtnClick()
 }
+
 
 class HomeImgLoopCell: UITableViewCell,SDCycleScrollViewDelegate {
     private var adView: SDCycleScrollView?
@@ -56,6 +58,7 @@ class HomeImgLoopCell: UITableViewCell,SDCycleScrollViewDelegate {
         
     }
 }
+
 
 class HomeScrollerCell: UITableViewCell,SDCycleScrollViewDelegate {
     private var adView: SDCycleScrollView?
@@ -157,5 +160,43 @@ class HomeMiddleCell: UITableViewCell {
     @objc func btnClick(btn: UIButton) {
         let tag = btn.tag - 100
         delegate?.middleBtnItemClick(text: titleArray[tag])
+    }
+}
+
+class HomeBigCell: UITableViewCell {
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var time: UILabel!
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    func configData(model: HomeNewsModel) {
+        title.text = model.contentTitle
+        if let url = URL(string: model.icon ?? "") {
+           img.kf.setImage(with: url)
+        }
+        time.text = model.createTime
+    }
+}
+
+class HomeNormalCell: UITableViewCell {
+    
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var time: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    func configData(model: HomeNewsModel) {
+        title.text = model.contentTitle
+        if let url = URL(string: model.icon ?? "") {
+            img.kf.setImage(with: url)
+        }
+        time.text = model.createTime
     }
 }

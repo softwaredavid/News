@@ -79,10 +79,16 @@ extension HomeViewController: UITableViewProtocol {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 1 {
+        switch indexPath.row {
+        case 0:
+            return 219
+        case 1:
             let merginWidth = (screen_width - 208) / 5
             return merginWidth + (merginWidth + 52) * 2
+        case 2:
+            return 220
+        default:
+            return 118
         }
-        return 219
     }
 }

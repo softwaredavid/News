@@ -24,7 +24,7 @@ struct HomeRequest {
     
     static func getTopNews(code: String,success: @escaping ([HomeNewsModel]?) -> ()) {
         let provider = MoyaProvider<Service>()
-        _ = provider.rx.request(.getNewsTop(code: code, days: 2))
+        _ = provider.rx.request(.getNewsTop(code: code, days: 10))
             .mapModel(ResultModel<[HomeNewsModel]>.self).subscribe { result in
                 switch result {
                 case .success(let obj):

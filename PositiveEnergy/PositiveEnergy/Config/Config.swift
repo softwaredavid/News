@@ -16,8 +16,11 @@ typealias UITableViewProtocol = UITableViewDataSource & UITableViewDelegate
 
 struct Config {
     
-    struct Jpush {
-        static let jpushKey = "837f32ad3a0d74aa89812b47"
+    struct umShare {
+        static let shareKey = "5b57e6daf29d986b5f0000cc"
+        static let wexin = ""
+        static let weixinScret = ""
+        static let qq = ""
     }
     
     var server: Server {

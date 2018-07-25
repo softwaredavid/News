@@ -39,7 +39,7 @@ extension Service: TargetType {
         }
     }
     
-    var method: Method {
+    var method: Moya.Method {
         switch self {
         case .homeMenu(_):
             return .post

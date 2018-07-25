@@ -152,6 +152,7 @@
 		A36DEB3920E5E59F0021439F /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		A36DEB3B20E6050A0021439F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A3B4448320F9E03A008B67FC /* ToModelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToModelExtension.swift; sourceTree = "<group>"; };
+		A3F17F10210821C900C0E7FE /* PositiveEnergy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PositiveEnergy-Bridging-Header.h"; sourceTree = "<group>"; };
 		A3F269C220E70E5D00F84930 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		A3F4EF372100800E00E312AF /* Propaganda.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Propaganda.storyboard; sourceTree = "<group>"; };
 		A3F4EF392100804700E312AF /* Education.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Education.storyboard; sourceTree = "<group>"; };
@@ -335,6 +336,7 @@
 			children = (
 				A36DEB0620E5C0F00021439F /* Config.swift */,
 				A36DEB1820E5E2170021439F /* UIFont.swift */,
+				A3F17F10210821C900C0E7FE /* PositiveEnergy-Bridging-Header.h */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -442,6 +444,7 @@
 				A36DEACF20E5BD3B0021439F /* Frameworks */,
 				A36DEAD020E5BD3B0021439F /* Resources */,
 				E935D06B0EF4E269186452C2 /* [CP] Embed Pods Frameworks */,
+				7D6EB389A02A2895FD6684DC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -502,6 +505,7 @@
 				TargetAttributes = {
 					A36DEAD120E5BD3B0021439F = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 					};
 					A36DEAE520E5BD3C0021439F = {
 						CreatedOnToolsVersion = 9.4;
@@ -583,6 +587,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D6EB389A02A2895FD6684DC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PositiveEnergy/Pods-PositiveEnergy-resources.sh",
+				"${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PositiveEnergy/Pods-PositiveEnergy-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7F88DAFB2C0F74058AD62462 /* [CP] Check Pods Manifest.lock */ = {
@@ -880,6 +902,7 @@
 			baseConfigurationReference = 2E050C7C0210EFF1276E55E4 /* Pods-PositiveEnergy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXV7SP94Z4;
 				INFOPLIST_FILE = PositiveEnergy/Info.plist;
@@ -890,6 +913,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shanxi.positive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PositiveEnergy/Config/PositiveEnergy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -900,6 +925,7 @@
 			baseConfigurationReference = CAC4FCE37E114AACFB44C5CF /* Pods-PositiveEnergy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXV7SP94Z4;
 				INFOPLIST_FILE = PositiveEnergy/Info.plist;
@@ -910,6 +936,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shanxi.positive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PositiveEnergy/Config/PositiveEnergy-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

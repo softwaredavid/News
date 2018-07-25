@@ -29,6 +29,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
     }
+    
+    private func configShare() {
+        UMConfigure.initWithAppkey(Config.umShare.shareKey, channel: "App Store")
+    }
+    func configSharePlatform() {
+        let UMManager = UMSocialManager.default()
+        UMManager!.setPlaform(UMSocialPlatformType.wechatSession, appKey: Config.umShare.wexin, appSecret: Config.umShare.weixinScret, redirectURL: "http://mobile.umeng.com/social")
+        UMManager!.setPlaform(UMSocialPlatformType.wechatTimeLine, appKey: Config.umShare.wexin, appSecret: Config.umShare.weixinScret, redirectURL: "http://mobile.umeng.com/social")
+        UMManager!.setPlaform(UMSocialPlatformType.QQ, appKey: Config.umShare.qq, appSecret: nil, redirectURL: "http://mobile.umeng.com/social")
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         

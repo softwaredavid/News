@@ -11,6 +11,11 @@ target 'PositiveEnergy' do
   pod 'SDCycleScrollView', '~> 1.75'
   pod 'SDWebImage', '~> 4.3.3'
   pod 'MJRefresh' ,'~> 3.1.15'
+  
+  pod 'UMCShare/UI'
+  pod 'UMCShare/Social/ReducedWeChat'
+  pod 'UMCShare/Social/ReducedQQ'
+  pod 'UMCCommon'
 
   target 'PositiveEnergyTests' do
     inherit! :search_paths

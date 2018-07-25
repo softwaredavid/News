@@ -16,6 +16,18 @@ PODS:
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
+  - UMCCommon (1.5.1)
+  - UMCShare/Core (6.9.3):
+    - UMCCommon
+  - UMCShare/Social/ReducedQQ (6.9.3):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/ReducedWeChat (6.9.3):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/UI (6.9.3):
+    - UMCCommon
+    - UMCShare/Core
 
 DEPENDENCIES:
   - Kingfisher (~> 4.8.0)
@@ -24,6 +36,10 @@ DEPENDENCIES:
   - Moya/RxSwift (~> 11.0)
   - SDCycleScrollView (~> 1.75)
   - SDWebImage (~> 4.3.3)
+  - UMCCommon
+  - UMCShare/Social/ReducedQQ
+  - UMCShare/Social/ReducedWeChat
+  - UMCShare/UI
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -36,6 +52,8 @@ SPEC REPOS:
     - RxSwift
     - SDCycleScrollView
     - SDWebImage
+    - UMCCommon
+    - UMCShare
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
@@ -47,7 +65,9 @@ SPEC CHECKSUMS:
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  UMCCommon: 16b674e9de0616d3a6128c551348a686d869c3c7
+  UMCShare: 023886b10d11119331c9c46d8e8a0c31fe67c23e
 
-PODFILE CHECKSUM: 676d33838561c21a63133223947a11185e1f2c4f
+PODFILE CHECKSUM: 3fc842bb9a53034d6b0e6a42803b6316a73dc061
 
 COCOAPODS: 1.5.3

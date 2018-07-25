@@ -4,7 +4,7 @@
 //
 //  Created by jintelai on 2018/6/29.
 //  Copyright © 2018年 jintelai. All rights reserved.
-//
+//     5b57e6daf29d986b5f0000cc 友盟
 
 import UIKit
 

@@ -20,7 +20,8 @@ struct Config {
         static let shareKey = "5b57e6daf29d986b5f0000cc"
         static let wexin = ""
         static let weixinScret = ""
-        static let qq = ""
+        static let qq = "FP13QN36kufvyHIv" // key
+        // id 1107203246
     }
     
     var server: Server {

@@ -121,14 +121,16 @@ class NewsViewController: BaseViewController {
     }
     
     @objc func titleButtonClick(btn: UIButton) {
+        tab.mj_header.beginRefreshing()
         let tag = btn.tag - 200
         let id = homeMenuArray[tag].menuId ?? 1
         let provider = MoyaProvider<Service>()
         provider.rx.request(.getNewsSub(String(format: "%06d", id)))
             .mapModel(ResultModel<[HomeMenuModel]>.self).subscribe { [weak self] result in
+                self?.tab.endResh()
                 switch result {
                 case .success(let obj):
-                    self?.tab.endResh()
+                    if obj.data != nil && obj.data!.count != 0 { return }
                 case .error(let error):
                     print(error)
                 }

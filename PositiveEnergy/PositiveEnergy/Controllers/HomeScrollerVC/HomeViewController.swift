@@ -99,7 +99,7 @@ extension HomeViewController: UITableViewProtocol {
             let merginWidth = (screen_width - 208) / 5
             return merginWidth + (merginWidth + 52) * 2 + 8
         case 2:
-            return 220
+            return 280
         default:
             return 118
         }

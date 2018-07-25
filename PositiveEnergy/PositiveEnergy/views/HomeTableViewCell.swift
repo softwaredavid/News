@@ -201,7 +201,11 @@ class HomeBigCell: UITableViewCell {
 class HomeNormalCell: UITableViewCell {
     
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var img: UIImageView! {
+        didSet {
+            img.rounderRectRadius(cornerRadius: 5)
+        }
+    }
     @IBOutlet weak var time: UILabel!
     
     override func awakeFromNib() {

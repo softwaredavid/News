@@ -173,7 +173,7 @@ extension NewsViewController: UITableViewProtocol {
         case 0:
             return 219
         case 1:
-            return 220
+            return 280
         default:
             return 118
         }
